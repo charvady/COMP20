@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Style Document */
+
+musiclist{
+    display:block;
+    background-color: #437694;
+    font-family: Tahoma;
+    width: 70%;
+    margin: 5% 15% 10% 15%;
+
+}
+
+msg {
+  text-transform: lowercase;
+  font-style: italic;
+  letter-spacing: 6px;
+  display: block;
+  text-align: center;
+  font-size: 50px;
+
+}
+
+msg2 {
+  text-transform: lowercase;
+  letter-spacing: 3px;
+  display: block;
+  text-align: center;
+  font-size: 25px;
+
+}
+
+
+song {
+    display: block;
+    margin: 15px;
+    text-align: center;
+    border: 7px;
+}
+
+title {
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    color: #99b9cc;
+}
+
+artist {
+    display: block;
+    text-align: center;
+}
+        artist:before{content:"Artist: "; color: black;}
+
+genre {
+    display: block;
+}
+        genre:before{content:"Genre: "; color: black;}
+
+year {
+    display: block;
+}
+        year:before{content:"Year: "; color: black;}

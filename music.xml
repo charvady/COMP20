@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href = "style.css"?>
+
+<musiclist>
+
+  <msg>Songs that are kind of neat</msg>
+  <msg2>curated by charvady</msg2>
+
+  <song>
+    <title>Outta My Mind</title>
+    <artist>Monsune</artist>
+    <genre>Alternative/Indie</genre>
+    <year>2019</year>
+  </song>
+
+  <song>
+    <title>Lemonade</title>
+    <artist>Internet Money ft. Gunna, Don Toliver, &amp; NAV</artist>
+    <genre>Hip-Hop/Rap</genre>
+    <year>2020</year>
+  </song>
+
+  <song>
+    <title>Hell N Back</title>
+    <artist>Bakar</artist>
+    <genre>R&amp;B/Soul</genre>
+    <year>2019</year>
+  </song>
+
+  <song>
+    <title>Martin &amp; Gina</title>
+    <artist>Polo G</artist>
+    <genre>Hip-Hop/Rap</genre>
+    <year>2020</year>
+  </song>
+
+  <song>
+    <title>Lost</title>
+    <artist>Frank Ocean</artist>
+    <genre>Neo Soul/Contemporary R&amp;B/Pop</genre>
+    <year>2012</year>
+  </song>
+
+  <song>
+    <title>Ninety</title>
+    <artist>Jaden Smith</artist>
+    <genre>Hip-Hop/Rap</genre>
+    <year>2017</year>
+  </song>
+
+  <song>
+    <title>For The Night</title>
+    <artist>Pop Smoke ft. Lil Baby &amp; DaBaby</artist>
+    <genre>Hip-Hop/Rap</genre>
+    <year>2020</year>
+  </song>
+
+  <song>
+    <title>Habit</title>
+    <artist>Still Woozy</artist>
+    <genre>Pop</genre>
+    <year>2019</year>
+  </song>
+
+  <song>
+    <title>Top Off</title>
+    <artist>Gunna</artist>
+    <genre>Hip-Hop/Rap</genre>
+    <year>2018</year>
+  </song>
+
+  <song>
+    <title>Beauty &amp; Essex</title>
+    <artist>Free Nationals ft. Daniel Caesar, Unknown Mortal Orchestra</artist>
+    <genre>R&amp;B/Soul</genre>
+    <year>2019</year>
+  </song>
+
+</musiclist>
