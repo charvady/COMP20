@@ -1,0 +1,121 @@
+<!doctype html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mass Lottery - Quick Pick</title>
+    <style>
+        body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+    </style>
+</head>
+
+<body>
+    <h1>LUCKY FOR LIFE</h1>
+    <script language="javascript">
+
+        //wrapper function to generate random numbers
+        function num_gen(start, end){
+            var rand = Math.floor((Math.random() * end) + start);
+            rand = parseInt(rand);
+            return rand;  
+        };
+
+        //function to compare winning numbers
+
+
+        //generating the winning numbers
+        var winning_num = new Array(5);
+        var j;
+        for(j = 0; j < 5; j++){
+            winning_num[j] = num_gen(1, 48);
+        };
+        winning_num = winning_num.sort(function(a,b) {return a- b});
+        var winning_lucky = num_gen(1, 18);
+
+
+        //USER's chosen numbers
+        entered_num = prompt("Enter 5 winning numbers separated by a space (1-48)");
+        entered_lucky = prompt("Enter a lucky ball number (1-18)");
+
+        entered_num = entered_num.split(" ");
+        entered_num = entered_num.sort(function(a,b) {return a- b});
+
+        document.write("These are your numbers: ");
+        var i;
+        for(i = 0; i < 5; i++){
+            document.write(entered_num[i] + " ");
+        }
+        document.write("<br/> Your Lucky Ball number: " + entered_lucky + "<br/>");
+
+        //display winning numbers
+        document.write("<br/> These are the winning numbers: ");
+        for(i = 0; i < 5; i++){
+            document.write(winning_num[i] + " ");
+        }
+        document.write("<br/> The winning Lucky Ball number: " + winning_lucky);
+        
+        //check numbers to see what matches
+        var num_count;
+        num_count = 0;
+        document.write("<br/>");
+        for(i = 0; i < 5; i++){
+            for (j = 0; j < 5; j++){
+                if(winning_num[i] == entered_num[j]){
+                    num_count += 1;
+                }
+            }
+        }
+        var lucky;
+        if(winning_lucky == entered_lucky){
+            lucky = true;
+        }else{
+            lucky = false;
+        }
+
+        //printing matches out
+        document.write("<br/> <h3>RESULTS</h3>")
+        document.write("<br/> Numbers matched: " + num_count + ". ");
+        if(lucky == true){
+            document.write("Lucky Ball matched! ")
+        }else{
+            document.write("Lucky Ball did not match. ")
+        }
+
+        //checking winnings & printing it
+        if(lucky == true){ //lucky ball +
+            if(num_count == 0){
+                document.write("You win! Your payout is $4.")
+            }if(num_count == 1){
+                document.write("You win! Your payout is $6.")
+            }if(num_count == 2){
+                document.write("You win! Your payout is $25.")
+            }if(num_count == 3){
+                document.write("You win! Your payout is $150.")
+            }if(num_count == 4){
+                document.write("You win! Your payout is $5,000.")
+            }if(num_count == 5){
+                document.write("You win! Your payout is $7,000/week FOR LIFE!")
+            }
+
+        }else if (lucky == false) {  // no lucky ball
+            if(num_count == 0){
+                document.write("You lost.")
+            }if(num_count == 1){
+                document.write("You lost.")
+            }if(num_count == 2){
+                document.write("You win! Your payout is $3.")
+            }if(num_count == 3){
+                document.write("You win! Your payout is $20.")
+            }if(num_count == 4){
+                document.write("You win! Your payout is $200.")
+            }if(num_count == 5){
+                document.write("You win! Your payout is $25,000/year FOR LIFE!")
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
