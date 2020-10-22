@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Extra Credit!</title>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <style>
+            body{
+                text-align: center;
+                background: url("https://www.xmple.com/wallpaper/stripes-blue-black-lines-streaks-1920x1080-c2-000000-87cefa-l2-263-263-a-45-f-1.svg");
+                color: white;
+                padding: 100px;
+            }
+            h1{
+                font-family: 'Press Start 2P', cursive;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>switchies</h1>
+        <form>
+            <input type="text" id="msg1" name="msg1" placeholder="Enter a message:">
+            <input type="button" id="button" value="→">
+            <input type="text" id="msg2" name="msg2" placeholder="Enter a message:">
+        </form>
+
+        <script language="javascript">
+            document.getElementById("button").addEventListener("click", switchies);
+
+            function switchies(){
+                if (this.value == "→"){
+                    var text = document.getElementById("msg1").value;
+
+                    document.getElementById("msg1").value = "";
+                    document.getElementById("msg2").value = text;
+
+                    this.value = "←";
+                }else{
+                    var text = document.getElementById("msg2").value;
+                    
+                    document.getElementById("msg2").value = "";
+                    document.getElementById("msg1").value = text;
+
+                    this.value = "→";
+                }
+
+            }
+        </script>
+        
+    </body>
+
+</html>
