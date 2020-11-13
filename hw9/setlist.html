@@ -32,7 +32,7 @@
             var genres = ["All Genres", "Hip-Hop/Rap", "Alternative/Indie", "R&B/Soul", "Neo Soul", "Contemporary R&B", "Pop"];
 
             function sortSongs(filter){
-                $.getJSON("https://raw.githubusercontent.com/charvady/COMP20/master/hw9/setlist2.json", function(data){
+                $.getJSON("https://raw.githubusercontent.com/charvady/COMP20/master/hw9/setlist.json", function(data){
                     data_string = JSON.stringify(data);
                     data_array = JSON.parse(data_string);
                     data = "";
