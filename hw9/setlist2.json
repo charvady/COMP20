@@ -1,0 +1,73 @@
+[
+
+    {
+        "title" : "Outta My Mind",
+        "artist" : "Monsune",
+        "genre" : ["Alternative/Indie"],
+        "year" : 2019
+    },
+
+    {
+        "title" : "Lemonade",
+        "artist" : "Internet Money ft. Gunna, Don Toliver, & NAV",
+        "genre" : ["Hip-Hop/Rap"],
+        "year" : 2020
+    },
+    
+    {
+        "title" : "Hell N Back",
+        "artist" : "Bakar",
+        "genre" : ["R&B/Soul"],
+        "year" : 2019
+    },
+
+    {
+        "title" : "Martin & Gina",
+        "artist" : "Polo G",
+        "genre" : ["Hip-Hop/Rap"],
+        "year" : 2020
+    },
+
+    {
+        "title" : "Lost",
+        "artist" : "Frank Ocean",
+        "genre" : ["Neo Soul", "Contemporary R&B", "Pop"],
+        "year" : 2012
+    },
+
+    {
+        "title" :"Ninety",
+        "artist" : "Jaden Smith",
+        "genre" : ["Hip-Hop/Rap"],
+        "year" : 2017
+    },
+
+    {
+        "title" : "For The Night",
+        "artist" : "Pop Smoke ft. Lil Baby & DaBaby",
+        "genre" : ["Hip-Hop/Rap"],
+        "year" : 2020
+    },
+
+    {
+        "title" : "Habit",
+        "artist" : "Still Woozy",
+        "genre" : ["Pop"],
+        "year" : 2019
+    },
+
+    {
+        "title" : "Top Off",
+        "artist" : "Gunna",
+        "genre" : ["Hip-Hop/Rap"],
+        "year" : 2018
+    },
+
+    {
+        "title" : "Beauty & Essex",
+        "artist" : "Free Nationals ft. Daniel Caesar & Unknown Mortal Orchestra",
+        "genre" : ["R&B/Soul"],
+        "year" : 2019
+    }
+
+]
