@@ -1,0 +1,112 @@
+<!doctype html> 
+<html>
+<head>
+    <title>API Fun</title>    
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <style>
+        body{
+            width: 60%;
+            margin: auto;
+            margin-top: 40px;
+            font-family: 'Work Sans', sans-serif;
+            justify-content: center;
+        }
+        .user-choice{
+            width: 100%;
+            padding: 15px 30px;
+        }
+        .selec-info{
+            margin: 20px 0px;
+
+        }
+        #button{
+            margin-top: 10px;
+            padding: 10px;
+            font-family: 'Work Sans', sans-serif;
+        }
+        .result{
+            margin-top: 30px;
+        }
+        .biggerpicture{
+            background-color: #bbdbfa;
+            padding: 50px;
+        }
+    </style>
+    <script language="javascript">
+        function bored(){
+            //step 0: pull the results of the form
+            var param = "";
+            //by type
+            if(document.getElementsByName("choice")[0].checked){
+                var input = document.getElementById("user-choice").value;
+                if (input != ""){
+                    param = "?type=" + input;
+                }
+            }
+            //by participants
+            if (document.getElementsByName("choice")[1].checked){
+                var input = document.getElementById("user-choice").value;
+                if (input != ""){
+                    param = "?participants=" + input;
+                }
+            }
+            
+
+            //step 1: make instance of req. obj.
+            request = new XMLHttpRequest();
+            console.log("1 - request object created");
+            
+            //step 2: set url for AJAX req to be the json file
+            request.open("GET", "http://www.boredapi.com/api/activity/" + param, true);
+            console.log("2 - opened request file");
+
+            request.onload = function(data){
+                console.log("3 - loading data");
+                response = request.responseText;
+                
+                var data = JSON.parse(response);
+                console.log("response from XMLHttpRequest");
+                console.log(data);
+
+                document.getElementById("activity").innerHTML = "Activity: " + data.activity;
+                document.getElementById("type").innerHTML = "Type: " + data.type;
+                document.getElementById("participants").innerHTML = "Participants: " + data.participants;
+            }
+            request.onerror = function(){
+
+            };
+            request.send();
+            console.log("4- Request sent");
+        }
+    </script>
+</head>
+
+<body>
+    <div class="biggerpicture">
+        <div class="disp-info">
+            <h1>Welcome to the activity generator!</h1>
+            <p>This generator will allow you to generate an activity for whenever you don't know what to do. Either enter a type of activity or a number of participants. Remember to check off which one you're using to seek an activity! Enter a blank query for a random result.</p>
+            <p>Types of activities available: "education", "recreational", "social", "diy", "charity", "cooking", "relaxation", "music", "busywork"</p>
+            <p>Participant values available: 1, 2, 3, 4, 5, 8</p>
+        </div>
+
+        <div class="selec-info">
+            <form>
+                <input type="text" id="user-choice" name="user-choice" value="">
+                <input type="radio" name="choice" value="type" checked="checked"/>Type
+                <input type="radio" name="choice" value="num"/># of Participants
+            </form>
+            <button type="submit" id="button" onclick="bored();">Search</button>
+        </div>
+    
+
+    <div class="result">
+        <div id="activity"></div>
+        <div id="type"></div>
+        <div id="participants"></div>
+    </div>
+</div>
+</body>
+</html>
