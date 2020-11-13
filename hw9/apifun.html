@@ -33,6 +33,9 @@
             background-color: #bbdbfa;
             padding: 50px;
         }
+        .credit{
+            padding-top: 30px;
+        }
     </style>
     <script language="javascript">
         function bored(){
@@ -59,7 +62,7 @@
             console.log("1 - request object created");
             
             //step 2: set url for AJAX req to be the json file
-            request.open("GET", "https://www.boredapi.com/api/activity/" + param, true);
+            request.open("GET", "http://www.boredapi.com/api/activity/" + param, true);
             console.log("2 - opened request file");
 
             request.onload = function(data){
@@ -106,6 +109,10 @@
         <div id="activity"></div>
         <div id="type"></div>
         <div id="participants"></div>
+    </div>
+
+    <div class="credit">
+        <p>This API generates different activities to do when you’re bored. It is able to take requests based on different factors. For my website, I specifically allowed for the option to choose the type of activity or # of participants for each request, but you are able to apply factors like cost and accessibility. This API would be useful for times when you’re alone and bored, and you don’t know what to do, or when you’re with a group of friends, and you cannot come to an agreement about what to do! :) I found this API at https://www.boredapi.com/. </p>
     </div>
 </div>
 </body>
