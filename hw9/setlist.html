@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>char's cool jams</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+        <style>
+            body{
+                font-family: 'Cutive Mono', monospace;
+                padding: 10px;
+                margin: 20px;
+
+            }
+            h1{
+                padding-bottom: 20px;
+            }
+            .tunes{
+
+            }
+            .single-w{
+                margin: 30px;
+            }
+            #choices, #sortbutton{
+                font-family:'Cutive Mono', monospace;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script language="javascript">
+            $(document).ready(sortSongs(0));
+
+            var genres = ["All Genres", "Hip-Hop/Rap", "Alternative/Indie", "R&B/Soul", "Neo Soul", "Contemporary R&B", "Pop"];
+
+            function sortSongs(filter){
+                $.getJSON("https://raw.githubusercontent.com/charvady/COMP20/master/hw9/setlist2.json", function(data){
+                    data_string = JSON.stringify(data);
+                    data_array = JSON.parse(data_string);
+                    data = "";
+
+                    for(var i = 0; i < 10; i++){
+                        if(type(genres[filter], data_array[i].genre)){
+                            data += "<div class='single'><div class='single-w'>";
+                            data += "<div class='info'>" + data_array[i].title + "</div>";
+                            data += "<div class='info'> Artist: " + data_array[i].artist + "<br/>"
+                            data += "Genre: ";
+
+                            for(var j = 0; j < data_array[i].genre.length; j++){
+                                data+= data_array[i].genre[j];
+
+                                if(j != data_array[i].genre.length - 1){
+                                    data += ", ";
+                                }
+                            }
+                        data += "<br/>";
+                        data += "Year: " + data_array[i].year + "</div></div></div>";
+                        }
+                    }
+                    document.getElementById("tunes").innerHTML = data;
+                }
+                
+                )
+            }
+
+            function type(genre, array){
+                if (genre == "All Genres"){
+                    return true;
+                }
+
+                for(var i = 0; i < array.length; i++){
+                    if (genre == array[i])
+                    return true;
+                }
+                return false;
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>char's cool jams</h1>
+        <form onsubmit="return false">
+            Sort by genre: 
+            <select id="choices">
+                <option id="default">All Genres</option>
+                <option id="Hip-Hop/Rap">Hip-Hop/Rap</option>
+                <option id="Alternative/Indie">Alternative/Indie</option>
+                <option id="rnb/soul">R&amp;B/Soul</option>
+                <option id="Neo Soul">Neo Soul</option>
+                <option id="contemporary rnb">Contemporary R&amp;B</option>
+                <option id="Pop">Pop</option>
+            </select>
+            <button type="submit" class="button" id="sortbutton" value="Filter">Filter</button>
+        </form>
+        
+        <div id="tunes"></div>
+
+        <script>
+            $('button').on('click', function() {
+
+                if ($("#choices").prop('selectedIndex') == 0){
+                    sortSongs(0);
+            }else{
+                    sortSongs($("#choices").prop('selectedIndex'));
+            }
+}); 
+        </script>
+    </body>
+</html>
